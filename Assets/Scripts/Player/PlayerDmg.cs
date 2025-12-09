@@ -32,12 +32,15 @@ public class PlayerDmg : MonoBehaviour
             life -= 1;
             Debug.Log("Player Hit" + life);
             lifeText.GetComponent<TextMeshProUGUI>().text = "HP: " + life.ToString();
+            
         }    
     }
 
     void Death()
     {
         deathPanel.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0f;
     }
 }

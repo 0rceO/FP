@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Wepon : MonoBehaviour
 {
+    SoundManager soundManager;
     public Transform firePoint;
     public int ammoCount = 20;
     public int maxAmmo = 20;
@@ -15,7 +16,10 @@ public class Wepon : MonoBehaviour
     public float reloadTime = 2.0f; // seconds to reload
 
     public Camera fpsCam;
-    public ParticleSystem muzzleFlash;
+    public ParticleSystem muzzleFlash1;
+    [SerializeField] GameObject muzzleFlash2;
+    [SerializeField] GameObject impactEffectPrefab;
+
 
     private float nextTimeToFire = 0f;
     private bool isReloading = false;
@@ -25,7 +29,7 @@ public class Wepon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -35,7 +39,8 @@ public class Wepon : MonoBehaviour
         {   
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
-            muzzleFlash.Play();
+            muzzleFlash1.Play();
+            // Instantiate(muzzleFlash2, firePoint.position, firePoint.rotation);
             ammoCount -= 1;
         }
         // Start reload when player presses R or when ammo is 0
@@ -60,7 +65,7 @@ public class Wepon : MonoBehaviour
     void Shoot()
     {
         
-
+        soundManager.playSFX(soundManager.shoot);
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -70,6 +75,7 @@ public class Wepon : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
             }
+            Instantiate(impactEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
         }
 
     }
@@ -79,7 +85,7 @@ public class Wepon : MonoBehaviour
         isReloading = true;
         reloadTimer = reloadTime;
 
-        // Optional: play reload animation/sound here
+        soundManager.playSFX(soundManager.reload);
 
         while (reloadTimer > 0f)
         {

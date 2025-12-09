@@ -7,7 +7,7 @@ public class EscapeDoor : MonoBehaviour, IInteractable
     [SerializeField] GameObject escapePanel;
     public string getDescription()
     {
-        return "Need 0 points to open the Door";
+        return "Need 300 points to Escape";
     }
 
     public void interact()
@@ -16,8 +16,9 @@ public class EscapeDoor : MonoBehaviour, IInteractable
         if (pointsManager != null && pointsManager.points >= 0)
         {
             escapePanel.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
-            
         }
     }
 }

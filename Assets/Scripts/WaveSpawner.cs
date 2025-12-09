@@ -28,10 +28,12 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         if(spawnTimer <=0)
         {
+            
             //spawn an Zombie
-            if(zombiesToSpawn.Count >0)
+            if(zombiesToSpawn.Count > 0)
             {
                 GameObject Zombie = (GameObject)Instantiate(zombiesToSpawn[0], spawnLocation[spawnIndex].position,Quaternion.identity); // spawn first Zombie in our list
                 zombiesToSpawn.RemoveAt(0); // and remove it
@@ -76,16 +78,7 @@ public class WaveSpawner : MonoBehaviour
  
     public void Generatezombies()
     {
-        // Create a temporary list of zombies to generate
-        // 
-        // in a loop grab a random Zombie 
-        // see if we can afford it
-        // if we can, add it to our list, and deduct the cost.
- 
-        // repeat... 
- 
-        //  -> if we have no points left, leave the loop
- 
+
         List<GameObject> generatedzombies = new List<GameObject>();
         while(waveValue>0 || generatedzombies.Count <50)
         {
