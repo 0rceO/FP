@@ -132,8 +132,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 95
@@ -1287,7 +1285,7 @@ ScriptsOnlyBuild:
     className: CinemachineImpulseListener
   - hash:
       serializedVersion: 2
-      Hash: b6ccf09730265a3aee26f7c552233298
+      Hash: 7d40ed567647e68f3faf773451c03f9a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SoundManager

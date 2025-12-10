@@ -4,7 +4,8 @@ using TMPro;
 using UnityEngine;
 
 public class PlayerDmg : MonoBehaviour
-{
+{   
+    SoundManager soundManager;
     public int life = 5;
     [SerializeField] GameObject lifeText;
     [SerializeField] GameObject deathPanel;
@@ -12,6 +13,7 @@ public class PlayerDmg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         lifeText.GetComponent<TextMeshProUGUI>().text = "HP: " + life.ToString();
     }
 
@@ -29,6 +31,8 @@ public class PlayerDmg : MonoBehaviour
     {
         if (collision.collider.tag == "Target")
         {
+            soundManager.playSFX(soundManager.playerHurt);
+
             life -= 1;
             Debug.Log("Player Hit" + life);
             lifeText.GetComponent<TextMeshProUGUI>().text = "HP: " + life.ToString();

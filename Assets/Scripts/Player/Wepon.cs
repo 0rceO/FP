@@ -86,7 +86,6 @@ public class Wepon : MonoBehaviour
         reloadTimer = reloadTime;
 
         soundManager.playSFX(soundManager.reload);
-
         while (reloadTimer > 0f)
         {
             reloadTimer -= Time.deltaTime;
