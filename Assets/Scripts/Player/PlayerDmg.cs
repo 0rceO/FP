@@ -20,7 +20,7 @@ public class PlayerDmg : MonoBehaviour
     {
         soundManager = FindObjectOfType<SoundManager>();
         currentLife = maxLife;
-        lifeText.GetComponent<TextMeshProUGUI>().text = "HP: " + currentLife.ToString() + " / " + maxLife.ToString();
+        lifeText.GetComponent<TextMeshProUGUI>().text = currentLife.ToString() + " / " + maxLife.ToString();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
     }
@@ -46,7 +46,7 @@ public class PlayerDmg : MonoBehaviour
 
             currentLife -= 1;
             Debug.Log("Player Hit" + currentLife);
-            lifeText.GetComponent<TextMeshProUGUI>().text = "HP: " + currentLife.ToString() + " / " + maxLife.ToString();
+            lifeText.GetComponent<TextMeshProUGUI>().text = currentLife.ToString() + " / " + maxLife.ToString();
 
         }    
     }

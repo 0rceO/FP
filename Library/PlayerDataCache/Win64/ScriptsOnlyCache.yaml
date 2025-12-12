@@ -6,6 +6,12 @@ ScriptsOnlyBuild:
     - Enemy
     - EscapeDoor
     - GameManager
+    - ImpactScript
+    - InfimaGames.LowPolyShooterPack.CharacterAnimationEventHandler
+    - InfimaGames.LowPolyShooterPack.Magazine
+    - InfimaGames.LowPolyShooterPack.Muzzle
+    - InfimaGames.LowPolyShooterPack.Scope
+    - InfimaGames.LowPolyShooterPack.WeaponAnimationEventHandler
     - MouseLook
     - NavMeshAI
     - Play
@@ -19,12 +25,13 @@ ScriptsOnlyBuild:
     - WFX_LightFlicker
     - WaveSpawner
     - Wepon
-    Unity.AI.Navigation.Editor.dll:
-    - Unity.AI.Navigation.Editor.NavMeshAssetManager
-    - Unity.AI.Navigation.Editor.NavigationWindow
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshModifier
     - Unity.AI.Navigation.NavMeshSurface
+    Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputSettings
+    - UnityEngine.InputSystem.InputSystemObject
+    - UnityEngine.InputSystem.RemoteInputPlayerConnection
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -38,6 +45,14 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -99,20 +114,20 @@ ScriptsOnlyBuild:
     fullTypeName: Restart
     methodName: RestartGame
   - assembly: Assembly-CSharp
-    fullTypeName: QuitButton
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: QuitButton
-    methodName: QuitGame
-  - assembly: Assembly-CSharp
-    fullTypeName: Play
-    methodName: PlayBtn
-  - assembly: Assembly-CSharp
-    fullTypeName: Play
-    methodName: PlayBtn
-  - assembly: Assembly-CSharp
     fullTypeName: Restart
     methodName: RestartGame
+  - assembly: Assembly-CSharp
+    fullTypeName: QuitButton
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: Play
+    methodName: PlayBtn
+  - assembly: Assembly-CSharp
+    fullTypeName: QuitButton
+    methodName: QuitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: Play
+    methodName: PlayBtn
   sceneClasses:
     Assets/Scenes/FP.unity:
     - Class: 1
@@ -137,6 +152,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
@@ -145,6 +162,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
@@ -152,72 +171,78 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1632}
+      Script: {instanceID: 1676}
     - Class: 114
-      Script: {instanceID: 1774}
+      Script: {instanceID: 1678}
     - Class: 114
-      Script: {instanceID: 2320}
+      Script: {instanceID: 1728}
     - Class: 114
-      Script: {instanceID: 2416}
+      Script: {instanceID: 1884}
     - Class: 114
-      Script: {instanceID: 2504}
+      Script: {instanceID: 2274}
     - Class: 114
-      Script: {instanceID: 2726}
+      Script: {instanceID: 2498}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2610}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2712}
     - Class: 114
-      Script: {instanceID: 3074}
+      Script: {instanceID: 2820}
     - Class: 114
-      Script: {instanceID: 3264}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3350}
+      Script: {instanceID: 3072}
     - Class: 114
-      Script: {instanceID: 3440}
+      Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 4520}
+      Script: {instanceID: 3356}
     - Class: 114
-      Script: {instanceID: 4538}
+      Script: {instanceID: 3578}
     - Class: 114
-      Script: {instanceID: 4614}
+      Script: {instanceID: 3684}
     - Class: 114
-      Script: {instanceID: 4894}
+      Script: {instanceID: 3792}
     - Class: 114
-      Script: {instanceID: 5188}
+      Script: {instanceID: 5052}
     - Class: 114
-      Script: {instanceID: 5282}
+      Script: {instanceID: 5074}
     - Class: 114
-      Script: {instanceID: 5350}
+      Script: {instanceID: 5164}
     - Class: 114
-      Script: {instanceID: 5366}
+      Script: {instanceID: 5478}
     - Class: 114
-      Script: {instanceID: 5532}
+      Script: {instanceID: 5780}
     - Class: 114
-      Script: {instanceID: 5802}
+      Script: {instanceID: 5926}
     - Class: 114
-      Script: {instanceID: 5966}
+      Script: {instanceID: 6008}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6024}
     - Class: 114
-      Script: {instanceID: 6484}
+      Script: {instanceID: 6228}
     - Class: 114
-      Script: {instanceID: 6532}
+      Script: {instanceID: 6936}
     - Class: 114
-      Script: {instanceID: 6552}
+      Script: {instanceID: 7334}
     - Class: 114
-      Script: {instanceID: 6618}
+      Script: {instanceID: 7390}
     - Class: 114
-      Script: {instanceID: 7266}
+      Script: {instanceID: 7412}
     - Class: 114
-      Script: {instanceID: 7348}
+      Script: {instanceID: 7448}
     - Class: 114
-      Script: {instanceID: 8052}
+      Script: {instanceID: 7508}
     - Class: 114
-      Script: {instanceID: 117958}
+      Script: {instanceID: 8254}
+    - Class: 114
+      Script: {instanceID: 8344}
+    - Class: 114
+      Script: {instanceID: 8944}
+    - Class: 114
+      Script: {instanceID: 9194}
+    - Class: 114
+      Script: {instanceID: 9296}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -226,6 +251,8 @@ ScriptsOnlyBuild:
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 167
       Script: {instanceID: 0}
     - Class: 195
       Script: {instanceID: 0}
@@ -236,6 +263,8 @@ ScriptsOnlyBuild:
     - Class: 199
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 221
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -260,6 +289,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 72
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
@@ -269,31 +300,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1632}
+      Script: {instanceID: 1676}
     - Class: 114
-      Script: {instanceID: 2282}
+      Script: {instanceID: 1728}
     - Class: 114
-      Script: {instanceID: 2726}
+      Script: {instanceID: 2454}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3264}
+      Script: {instanceID: 3210}
     - Class: 114
-      Script: {instanceID: 4316}
+      Script: {instanceID: 3578}
     - Class: 114
-      Script: {instanceID: 4520}
+      Script: {instanceID: 4820}
     - Class: 114
-      Script: {instanceID: 4590}
+      Script: {instanceID: 5052}
     - Class: 114
-      Script: {instanceID: 5350}
+      Script: {instanceID: 5136}
     - Class: 114
-      Script: {instanceID: 5966}
+      Script: {instanceID: 5780}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 6008}
     - Class: 114
-      Script: {instanceID: 6484}
+      Script: {instanceID: 6936}
     - Class: 114
-      Script: {instanceID: 117958}
+      Script: {instanceID: 7334}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -313,6 +344,18 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
+      Hash: 540882762544409cc4530e60db00e951
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 1ab136900c0edaeeb49424c852595030
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: RawImage
+  - hash:
+      serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UIElements
@@ -325,16 +368,28 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
-      Hash: f45600bcc886206dd55a3208474aad61
-    assemblyName: Unity.VisualScripting.Core
-    namespaceName: Unity.VisualScripting
-    className: UnityOnScrollbarValueChangedMessageListener
+      Hash: 0f19765290d81f9e93eff7828a091d40
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: PlayerInput
+  - hash:
+      serializedVersion: 2
+      Hash: 138898e7907b3eb84fbdda7de664cb5e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DebrisScript
   - hash:
       serializedVersion: 2
       Hash: a3901985eb076c1c9b7562fca82ca3e0
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: f45600bcc886206dd55a3208474aad61
+    assemblyName: Unity.VisualScripting.Core
+    namespaceName: Unity.VisualScripting
+    className: UnityOnScrollbarValueChangedMessageListener
   - hash:
       serializedVersion: 2
       Hash: 85f24827eddd27f43d0c2c836b171707
@@ -367,6 +422,18 @@ ScriptsOnlyBuild:
     className: CinemachineTriggerAction
   - hash:
       serializedVersion: 2
+      Hash: 157d3cf40178d244cd11ae1c9791ead7
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.HID.Editor
+    className: HIDDescriptorWindow
+  - hash:
+      serializedVersion: 2
+      Hash: ed8e62f07ec878233f5493a335003493
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: VirtualMouseInput
+  - hash:
+      serializedVersion: 2
       Hash: 8703b6ae2b0eefd9dafbc44d8d333fb1
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -397,10 +464,28 @@ ScriptsOnlyBuild:
     className: CinemachineCameraOffset
   - hash:
       serializedVersion: 2
+      Hash: 744d52b684ec5f12e0df4fcbd0f21bd5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: LookAt
+  - hash:
+      serializedVersion: 2
+      Hash: 4d53a6a60ca9c1eb5028371b144215d8
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: CharacterKinematics
+  - hash:
+      serializedVersion: 2
       Hash: 674f86f72fc0bf1ef8d192a4dea794c8
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachineCollider
+  - hash:
+      serializedVersion: 2
+      Hash: 34a85976b726a354ea514c7ca590db4c
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: Muzzle
   - hash:
       serializedVersion: 2
       Hash: 734f7e684974f8f50dc01c1a7eb3d34c
@@ -433,16 +518,28 @@ ScriptsOnlyBuild:
     className: UnityOnDropMessageListener
   - hash:
       serializedVersion: 2
+      Hash: ba9528535d315a1d0e5179ff5774ccec
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ExplosiveBarrelScript
+  - hash:
+      serializedVersion: 2
       Hash: 1bc6ff8d02d2d68019aa6a028f8d409d
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerUpMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 0490bfaa36a9d5ae4d3d9fe0c0a2ade8
+      Hash: e32df5c8e8d821c1a2064c14ea498c45
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: NavMeshAI
+  - hash:
+      serializedVersion: 2
+      Hash: b40f8ffcaa6b71545b8d6ff04b849814
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: AdvancedDropdownWindow
   - hash:
       serializedVersion: 2
       Hash: 7e93247d600e115dac0cdd880de94e99
@@ -463,10 +560,10 @@ ScriptsOnlyBuild:
     className: WFX_Demo
   - hash:
       serializedVersion: 2
-      Hash: 1ab136900c0edaeeb49424c852595030
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: RawImage
+      Hash: a07853f3b84628586751fc12bd0a35c1
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: CharacterAnimationEventHandler
   - hash:
       serializedVersion: 2
       Hash: 6a0e0346b9619b41fb5748de616f57fc
@@ -475,10 +572,22 @@ ScriptsOnlyBuild:
     className: EscapeDoor
   - hash:
       serializedVersion: 2
+      Hash: 10dc501944017defba8876cfba343460
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: WeaponAnimationEventHandler
+  - hash:
+      serializedVersion: 2
       Hash: 1321993db8249e1e05e1e0492b2bbdc3
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 1305159d5a695e0b53e64d107c0f04bc
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CasingScript
   - hash:
       serializedVersion: 2
       Hash: 76985d05e160474a34860b693b206ee2
@@ -547,6 +656,12 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
+      Hash: 57aeca56c4cd4e9299b6fb9467355e0b
+    assemblyName: Assembly-CSharp
+    namespaceName: UnityEngine.PostProcessing
+    className: PostProcessingProfile
+  - hash:
+      serializedVersion: 2
       Hash: fce9b835d1e8b08e7ecea8da19f21986
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -607,7 +722,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 411dca89ce6c84e1ee77e2edd6d26208
+      Hash: 35bb517bac2f684076b9999b33de0400
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachineInputProvider
@@ -637,6 +752,12 @@ ScriptsOnlyBuild:
     className: UnityOnDropdownValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: b838cbada0b03f1cfbaebc8e124f4f39
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.OnScreen
+    className: OnScreenButton
+  - hash:
+      serializedVersion: 2
       Hash: a1ac4c50e55874de16eee3db71aa9784
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -655,6 +776,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: e0cb018ad3b2c0ab7840297e7613642c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Projectile
+  - hash:
+      serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -667,7 +794,13 @@ ScriptsOnlyBuild:
     className: UnityOnMouseDownMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a143fd3a19a47163adb3253c486301a0
+      Hash: 971de6b539e5aa32ce52621d59780d48
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: TimeHandler
+  - hash:
+      serializedVersion: 2
+      Hash: a28c0d5427103e40a13f1c02100bffea
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Wepon
@@ -703,10 +836,22 @@ ScriptsOnlyBuild:
     className: CinemachineSmoothPath
   - hash:
       serializedVersion: 2
+      Hash: 86344100c716167fb86137c127ca9eee
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionImporterEditor
+  - hash:
+      serializedVersion: 2
       Hash: c6369b4cc3be620d6c9300e920bc3d52
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: VariablesAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 4aae247232b4290cde4b43a351a65cce
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CharController_Motor
   - hash:
       serializedVersion: 2
       Hash: 07ac5abbf1211711231ba9fc21c550e6
@@ -731,6 +876,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSelectMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 04283da4bcd0a6b364ee13327e16f20b
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: TextTutorial
   - hash:
       serializedVersion: 2
       Hash: a7d85bf428409695406359ff73044861
@@ -787,10 +938,28 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 697da50a9139139cafb499f0d67b49bf
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: ImageWeapon
+  - hash:
+      serializedVersion: 2
+      Hash: ab2988e8749992459fbbc30ed0c70660
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ProjectileScript
+  - hash:
+      serializedVersion: 2
       Hash: 0a3f328f3ea906bbbcf794f4c27ee59d
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
     className: ScriptGraphAsset
+  - hash:
+      serializedVersion: 2
+      Hash: d85292b1d7ddb10e5a2df5d221dcba86
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputActionAsset
   - hash:
       serializedVersion: 2
       Hash: fb79e95da8891fc7ac6c36ca6967af23
@@ -811,6 +980,18 @@ ScriptsOnlyBuild:
     className: UnityOnPointerExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 95426d463074947dcbffc797c44e779c
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI.Editor
+    className: StandaloneInputModuleModuleEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 5835aa044b7ea3413cc6d9d819e95dd9
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionDebuggerWindow
+  - hash:
+      serializedVersion: 2
       Hash: 715e0da17ee29b8bd944f783053995e0
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -829,16 +1010,46 @@ ScriptsOnlyBuild:
     className: Bullet
   - hash:
       serializedVersion: 2
+      Hash: 164a37e0bc379311785dd54beac44331
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputDebuggerWindow
+  - hash:
+      serializedVersion: 2
       Hash: e636708ac1677b6f3be0cafe31e1bf77
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachineGroupComposer
   - hash:
       serializedVersion: 2
+      Hash: c45f681b9a143bd440d145cbeb1563cd
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MainMenu
+  - hash:
+      serializedVersion: 2
+      Hash: 32bfadf4ab14c1e4298d945ac7dbee8f
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputStateWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 0bc7ef1b7516f21320ec49bfd31eef2e
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: TrackedDeviceRaycaster
+  - hash:
+      serializedVersion: 2
       Hash: 4718916586b3818eb69bf65df61f0f3a
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionStay2DMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: bda10e0344bcd90a7869e56f2c949827
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: Weapon
   - hash:
       serializedVersion: 2
       Hash: 185e7bacfbbc5defefa609c70f7ff4ce
@@ -901,6 +1112,12 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreak2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: d32b0c9fe30d6f56241a2af861358955
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: DisableRenderer
+  - hash:
+      serializedVersion: 2
       Hash: 70373e18181a2229c9ec8448873d7545
     assemblyName: Cinemachine
     namespaceName: Cinemachine
@@ -929,6 +1146,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 215d2dc6ec6ea06728398ea39a103cb3
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.OnScreen
+    className: OnScreenStick
   - hash:
       serializedVersion: 2
       Hash: 0a88bbc2d41b8509aa137098f254d4a1
@@ -967,10 +1190,28 @@ ScriptsOnlyBuild:
     className: CinemachineCollisionImpulseSource
   - hash:
       serializedVersion: 2
+      Hash: 12617d45d878696b592686f399fb06c5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GasTankScript
+  - hash:
+      serializedVersion: 2
       Hash: 09a9ebb3299853f8a1d66f750e11097e
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachinePOV
+  - hash:
+      serializedVersion: 2
+      Hash: ea1b87a3bfed09792e7720338241c7a0
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputDeviceDebuggerWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 08e2446b65d2da7600c6bbdd36de0e56
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputSystemObject
   - hash:
       serializedVersion: 2
       Hash: 7e9cad7f71f9cc52f699bbd2d2a75734
@@ -979,7 +1220,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 7a4e729d3cb2f16bb93441f093e01a32
+      Hash: 51357d793b05990b180942bcedc1337b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Enemy
@@ -1009,16 +1250,22 @@ ScriptsOnlyBuild:
     className: MacroScriptableObject
   - hash:
       serializedVersion: 2
+      Hash: b57bd25160a01c3eef5bbfd9f9307a5c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SC_Weapon
+  - hash:
+      serializedVersion: 2
       Hash: 8dc40a01667ca02b3354a4e7a61be082
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: b57bd25160a01c3eef5bbfd9f9307a5c
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SC_Weapon
+      Hash: 90cf308600fb4aeb677786843453ec55
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: RemoteInputPlayerConnection
   - hash:
       serializedVersion: 2
       Hash: 98ad84ab9a7070e8ba3b6a616a057e2d
@@ -1057,6 +1304,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 0370b9f95798139b666659c7e1be6147
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: BaseInputOverride
+  - hash:
+      serializedVersion: 2
       Hash: cce88ec4737eb3cf0faab402148b7c4e
     assemblyName: Cinemachine
     namespaceName: Cinemachine
@@ -1079,6 +1332,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnTriggerStayMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: a9eb08fbf5c412602f252596dd02bde8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Play
   - hash:
       serializedVersion: 2
       Hash: 94fc5402eaeba57679f9fa3e205ac996
@@ -1147,22 +1406,28 @@ ScriptsOnlyBuild:
     className: NavMeshModifierVolume
   - hash:
       serializedVersion: 2
-      Hash: d08c6a6cf49fd0c230ec0aca2160a692
+      Hash: 541873683cdf61bca637fe9849d3821d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerDmg
   - hash:
       serializedVersion: 2
-      Hash: d82086405f46de14829f6b4bcbdd8fc9
-    assemblyName: Unity.VisualScripting.Core
-    namespaceName: Unity.VisualScripting
-    className: UnityOnBecameInvisibleMessageListener
+      Hash: 1fb53dd2d49a988a9503b4737b8adea6
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: CameraLook
   - hash:
       serializedVersion: 2
       Hash: 5874b789cd9832847c61ebfa803213af
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UIElements
     className: PanelEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: d82086405f46de14829f6b4bcbdd8fc9
+    assemblyName: Unity.VisualScripting.Core
+    namespaceName: Unity.VisualScripting
+    className: UnityOnBecameInvisibleMessageListener
   - hash:
       serializedVersion: 2
       Hash: d55992199bd2f5a5502658391cdf8ba7
@@ -1195,6 +1460,24 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: 0139f60db1f502ecd1adbd45ef8903c3
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TargetScript
+  - hash:
+      serializedVersion: 2
+      Hash: 9a3d95ff5a46a82160d3c0c6b921bc9e
+    assemblyName: Assembly-CSharp
+    namespaceName: UnityEngine.PostProcessing
+    className: PostProcessingBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 2071f7ac454ae14eafecfd4041edae3a
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionEditorWindow
+  - hash:
+      serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
@@ -1213,22 +1496,34 @@ ScriptsOnlyBuild:
     className: CinemachinePostProcessing
   - hash:
       serializedVersion: 2
+      Hash: 6cf63e9dc888f92a3672d2e4db631c8e
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: PlayerInputManagerEditor
+  - hash:
+      serializedVersion: 2
       Hash: 96f2309663796de0137da7344709f4a8
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachineOrbitalTransposer
   - hash:
       serializedVersion: 2
+      Hash: 3a551306f6ea4cd2e529bb7a48c20e78
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: Character
+  - hash:
+      serializedVersion: 2
+      Hash: baad29b1d62bd6957aab949f64791e72
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ExampleWheelController
+  - hash:
+      serializedVersion: 2
       Hash: 488f3922fa1ec8f7d72cbb04b88bf18d
     assemblyName: Cinemachine
     namespaceName: Cinemachine
     className: CinemachineBrain
-  - hash:
-      serializedVersion: 2
-      Hash: 540882762544409cc4530e60db00e951
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: CanvasScaler
   - hash:
       serializedVersion: 2
       Hash: 560346f4cbb7006f1b0bb6c77805d7ec
@@ -1279,10 +1574,28 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: b2563baea373d5847c1f570ba8db4442
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ExplosionScript
+  - hash:
+      serializedVersion: 2
+      Hash: 55b94cd99673f8ee709a4a71b3929332
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: Crosshair
+  - hash:
+      serializedVersion: 2
       Hash: da5a949a0bbd2ff91bc51c5805c2c41f
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseUpAsButtonMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: fc5f473132116619f1c6e566ad803096
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionsEditorWindow
   - hash:
       serializedVersion: 2
       Hash: 4f353524ce6564e40764f1ea080b2d85
@@ -1309,6 +1622,12 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 725da833d3d51d533bc7c852a492b02d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WaterFloat
+  - hash:
+      serializedVersion: 2
       Hash: febcfbf0a0d85e37808a3740e3c2c6fa
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1333,7 +1652,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 29ee54e4119df249efb1134b8aaeddb7
+      Hash: ff76a99fcb4e2e638a64fe9408767e69
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SC_CharacterController
@@ -1345,10 +1664,34 @@ ScriptsOnlyBuild:
     className: CinemachineImpulseListener
   - hash:
       serializedVersion: 2
+      Hash: 6ac2df1b20ad05f12eb0bc12e2306d1d
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: Scope
+  - hash:
+      serializedVersion: 2
+      Hash: bc75926bfd3609757f7bf33ff766f026
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.EnhancedTouch
+    className: TouchSimulation
+  - hash:
+      serializedVersion: 2
+      Hash: 8ed5daadd237bb82e132790f75ffccaf
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: PlayerInputEditor
+  - hash:
+      serializedVersion: 2
       Hash: 7d40ed567647e68f3faf773451c03f9a
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SoundManager
+  - hash:
+      serializedVersion: 2
+      Hash: a92561298b80715aa69e8fa770123cb5
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI.Editor
+    className: InputSystemUIInputModuleEditor
   - hash:
       serializedVersion: 2
       Hash: 8bbce9932f67ad8e7f4eefec87800f94
@@ -1357,10 +1700,28 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 3074afe1b03a0fb081e176a4ef1b9d09
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionAssetEditor
+  - hash:
+      serializedVersion: 2
+      Hash: e63fe08659e7e4647a51098c666f8845
+    assemblyName: Unity.InputSystem
+    namespaceName: 
+    className: DownloadableSample
+  - hash:
+      serializedVersion: 2
       Hash: f669be52680c88846b2093fd41d1e06e
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDragMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 7265b79bcdd421456fa598fc87b70ea0
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: Movement
   - hash:
       serializedVersion: 2
       Hash: 20a120e55ad3ab65556328d5fd8309dd
@@ -1369,10 +1730,22 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 33eb495d99aa9bea4dbe8b4c4e02c7bb
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputActionReference
+  - hash:
+      serializedVersion: 2
       Hash: 17142b03663387290480c82303274c02
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerEnterMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 79a6c28dadb3eb8b431cba7d5c2be1a7
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: TextMouseLock
   - hash:
       serializedVersion: 2
       Hash: f2305da2400dfe6f069770a1a63f0f7c
@@ -1409,6 +1782,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: BasicPlayableBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 1d657ca14bbe32a4b1a82793e280f84d
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: WeaponAttachmentManager
   - hash:
       serializedVersion: 2
       Hash: a86c76e3081313bbddd26f2d2c1c6830
@@ -1483,6 +1862,12 @@ ScriptsOnlyBuild:
     className: CinemachineShot
   - hash:
       serializedVersion: 2
+      Hash: 0a4ef3c4e73b2f3eef913e2325924084
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputSettings
+  - hash:
+      serializedVersion: 2
       Hash: e47d77dff9f7fd0f54480d10a98b411f
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1513,6 +1898,12 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: b18d741709a75a805d2e63d212a9ca71
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: AudioManagerService
+  - hash:
+      serializedVersion: 2
       Hash: dcd6f9cf5cec441c46002e8527c0612a
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1537,10 +1928,28 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 521666ed5128e4f7e9283e9b1722d2f8
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: CanvasSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: df89329094785063a8cd752ff03098ef
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: Inventory
+  - hash:
+      serializedVersion: 2
       Hash: d0392b7f3f52d5af537ade186b4f51f1
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ControlTrack
+  - hash:
+      serializedVersion: 2
+      Hash: daeac1347f8039f61cd4017ff33bd3c6
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: InputSystemUIInputModule
   - hash:
       serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
@@ -1561,10 +1970,34 @@ ScriptsOnlyBuild:
     className: CinemachineStateDrivenCamera
   - hash:
       serializedVersion: 2
+      Hash: 0b870df79a1934ecc1d95c0f08cf9511
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: TextAmmunitionTotal
+  - hash:
+      serializedVersion: 2
       Hash: 9a174471d4db2c0c6d3ac47d2f818db1
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnParticleCollisionMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 40be2ad159aa1a2b72ecc74cb38c7824
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: MultiplayerEventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 2bbd05175d4cdd21e24f9716cdd24f83
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.XR
+    className: TrackedPoseDriver
+  - hash:
+      serializedVersion: 2
+      Hash: 90a0f6961f35bd5a3a4b1597768fd3c6
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: Magazine
   - hash:
       serializedVersion: 2
       Hash: 0f5a086d4d028363983ba6ca30a01397
@@ -1583,6 +2016,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
     className: StateMachine
+  - hash:
+      serializedVersion: 2
+      Hash: 3f15de8e2296ce53e49a700069d57aa5
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: TextAmmunitionCurrent
+  - hash:
+      serializedVersion: 2
+      Hash: c4dabcbe744f6e1e76b34eb03bbbfcdc
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack
+    className: DisplayMaterialName
   - hash:
       serializedVersion: 2
       Hash: 568292fb7ea6c4f7a667e5ff76bc7e85
@@ -1615,6 +2060,24 @@ ScriptsOnlyBuild:
     className: CinemachineBasicMultiChannelPerlin
   - hash:
       serializedVersion: 2
+      Hash: bd19a11dbb5df4cbee333ee389f891ef
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ImpactScript
+  - hash:
+      serializedVersion: 2
+      Hash: 78459304daf691c795ae550ffd5f283c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FPSDisplay
+  - hash:
+      serializedVersion: 2
+      Hash: 774bd69f0f6b2171b228b03222b6f401
+    assemblyName: Assembly-CSharp
+    namespaceName: InfimaGames.LowPolyShooterPack.Interface
+    className: TextTimescale
+  - hash:
+      serializedVersion: 2
       Hash: ff76cf6cf52b4db7b95af6ffadca9288
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1625,6 +2088,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SC_Bullet
+  - hash:
+      serializedVersion: 2
+      Hash: c4cdb902228df56d5b2b639d6a6bbd3c
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: PlayerInputManager
   - hash:
       serializedVersion: 2
       Hash: a320abfac19aa0f57698e2c7d58cf46b
@@ -1651,6 +2120,12 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
+      Hash: ce3b1369e7ff4c379d7af50d486a0c4f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayParticles
+  - hash:
+      serializedVersion: 2
       Hash: 4fcf0bb4aff1d14a1dfcdedc4b07bd05
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
@@ -1667,26 +2142,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: c45f681b9a143bd440d145cbeb1563cd
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: MainMenu
-  - hash:
-      serializedVersion: 2
-      Hash: 84c36fa5f3445dc3b107c8a3114151f0
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FollowPlayer
-  - hash:
-      serializedVersion: 2
-      Hash: a9eb08fbf5c412602f252596dd02bde8
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Play
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/FP.unity
-  playerPath: C:/Users/orcel/Documents/Unity/Builds/Build/FP.exe
+  playerPath: F:/FP/Build/FP.exe
