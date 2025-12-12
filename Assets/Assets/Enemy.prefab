@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1233dc9ea58cc30499f7629b0cd3570b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 3388690701017864273}
   player: {fileID: 8265839043737670700, guid: 26cccbbb49005ad43a2c893427329222, type: 3}
 --- !u!114 &4673099378603997377
 MonoBehaviour:
@@ -147,6 +148,7 @@ MonoBehaviour:
   rb: {fileID: 9192897358942806680}
   health: 50
   pointsGet: 10
+  zombieAnimator: {fileID: 980631925249469722}
 --- !u!1 &8091619344948534520
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,11 +345,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieMale_AAB
       objectReference: {fileID: 0}
+    - target: {fileID: 5044388296177335680, guid: 2f6b5402acaac7e45a0b798395dd250b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2ef8e6599b7f9934e8ff0d64c5325a1f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6b5402acaac7e45a0b798395dd250b, type: 3}
+--- !u!95 &980631925249469722 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5044388296177335680, guid: 2f6b5402acaac7e45a0b798395dd250b, type: 3}
+  m_PrefabInstance: {fileID: 5447846913958170778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6592086087707604832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1216368519549315066, guid: 2f6b5402acaac7e45a0b798395dd250b, type: 3}

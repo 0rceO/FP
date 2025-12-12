@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class NavMeshAI : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     public Transform player;
 
     // Start is called before the first frame update

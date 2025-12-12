@@ -18,7 +18,6 @@ public class Wepon : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash1;
     [SerializeField] GameObject muzzleFlash2;
-    [SerializeField] GameObject impactEffectPrefab;
 
 
     private float nextTimeToFire = 0f;
@@ -26,6 +25,11 @@ public class Wepon : MonoBehaviour
     private float reloadTimer = 0f;
 
     [SerializeField] GameObject ammoCountText;
+
+    [SerializeField] Animator handAnimator, weaponAnimator;
+
+    public GameObject wallImpactPrefab;
+    public GameObject zombieImpactPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,9 +77,13 @@ public class Wepon : MonoBehaviour
             Enemy enemy = hit.transform.GetComponent<Enemy>();
             if (enemy != null)
             {
+                Instantiate(zombieImpactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
                 enemy.TakeDamage(damage);
             }
-            Instantiate(impactEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+            else
+            {
+                Instantiate(wallImpactPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+            }
         }
 
     }
@@ -84,6 +92,9 @@ public class Wepon : MonoBehaviour
     {
         isReloading = true;
         reloadTimer = reloadTime;
+
+        handAnimator.SetTrigger("Reloading");
+        weaponAnimator.SetTrigger("Reloading");
 
         soundManager.playSFX(soundManager.reload);
         while (reloadTimer > 0f)
